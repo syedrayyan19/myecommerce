@@ -1,0 +1,188 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+        <!-- carousal -->
+        <div class="container-fluid bg-dark shadow col-11 jumbo_cont">
+            <div id="demo" class="carousel slide" data-ride="carousel">
+              <!-- Indicators -->
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+              </ul>
+              <!-- The slideshow -->
+              <div class="carousel-inner" >
+                <div class="carousel-item active">
+                  <img src="{% static 'images/shop_cart.jpg' %}" width="100%" height="400px" >
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/cat-post-2.jpg' %}" width="100%" height="400px"  >
+                </div>
+                <div class="carousel-item">
+                  <img src="{% static 'images/watch.jpg' %}" width="100%" height="400px"  >
+                </div>
+              </div>
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+        </div>
+        <!-- category cards -->
+        <div class="container-fluid  mt-4 col-11">
+          <div class=" row  p-1"> 
+            <div class="card col jumbo_cont bg-light" style="width: 12rem; color:white; height:37rem">
+              <img class="card-img-top jumbo_cont mt-2" src="{% static 'images/women.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <span class=" font-weight-bold " style="font-size: 30px;color:black ">Women</span>
+                
+              </div>
+            </div>
+            <div class="card col jumbo_cont bg-light ml-2" style="width: 18rem; color:white;">
+              <img class="card-img-top jumbo_cont mt-2" src="{% static 'images/men.jpg' %}" alt="Card image cap">
+              <div class="card-body">
+                <span class=" font-weight-bold " style="font-size: 30px;color:black">Mens</span>
+                
+              </div>
+            </div>
+            <div class="card col jumbo_cont bg-light ml-2" style="width: 18rem; color:white;" >
+              <img class="card-img-top jumbo_cont mt-2" src="{% static 'images/kids.png' %}" alt="Card image cap">
+              <div class="card-body">
+                <span class=" font-weight-bold " style="font-size: 30px;color:black;">Kids</span>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- both -->
+        <div class="container-fluid mt-4  col-11 ">
+            <div class="row p-2 "> 
+              
+              <div class="col-12  p-3 ml-4 jumbo_cont" style="width: 100%;">
+                <div class="container-fluid ">
+                  <h2 class=" font-weight-bold">Selected Category Items/Featured Products</h2>
+                  <div class="row flex-wrap">
+                      <div class="col-4 ">
+                          <div class="card jumbo_cont bg-dark">
+                            <div class=" card-body">
+                              <img src="{% static 'images/cup.jpg' %}" class="jumbo_cont"  width="344px" height="240px" alt="">
+                              <span class="mt-2" style="color: white;">Item Name</span>
+                              <div class=" mt-3 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-4 ">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body">
+                            <img src="{% static 'images/boy.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class="mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body" style="width: 100%;">
+                            <img src="{% static 'images/shoe.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class=" mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3 ">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body">
+                            <img src="{% static 'images/watch.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Cup Name</span>
+                            <div class="mt-3 mb-1 form-inline">
+                              <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                              <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body">
+                            <img src="{% static 'images/car.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class=" mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body" style="width: 100%;">
+                            <img src="{% static 'images/hang.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class=" mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3 ">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body">
+                            <img src="{% static 'images/watch.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Cup Name</span>
+                            <div class="mt-3 mb-1 form-inline">
+                              <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                              <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body">
+                            <img src="{% static 'images/cat.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class=" mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-4 mt-3">
+                        <div class="card jumbo_cont bg-dark">
+                          <div class=" card-body" style="width: 100%;">
+                            <img src="{% static 'images/shop_cart.jpg' %}" class="jumbo_cont" width="344px" height="240px" alt="">
+                            <span class="mt-3 font-italic" style="color: white;font-size: larger; ">Item Name</span>
+                              <div class=" mt-3 mb-1 form-inline">
+                                <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
+                                <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                </div>
+              </div>
+             
+        </div>
+        </div>
+
+
+{% endblock body %}
+
+       
