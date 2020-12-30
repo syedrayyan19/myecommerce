@@ -33,13 +33,13 @@
          </a>
       </div>-->
       <div class="container">
-         <img src={% static 'images/men.jpg' %} style="height:500px;width:500px;">
+         <img src="{{sl.img.url}}" style="height:500px;width:500px;">
       </div>
    </div>
    <div class="col-lg-4">
-      <h3 class="font-weight-bold">Puma</h3>
-      <h4 class="" style="color:#8a8686;">Men Half T-Shirt</h4><hr>
-      <h3>Rs:599  <del style="color:#8a8686;">Rs: 799</del></h3><br>
+      <h3 class="font-weight-bold">{{sl.brand}}</h3>
+      <h4 class="" style="color:#8a8686;">{{sl.name}}</h4><hr>
+      <h3>Rs:{{sl.price}}  <del style="color:#8a8686;">Rs: {{sl.delprice}}</del></h3><br>
       <h4>Select Size:</h4>
       <div class="row">
          <button class="size">S</button>

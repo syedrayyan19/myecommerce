@@ -66,11 +66,12 @@
                 <div class="container-fluid ">
                   <h2 class=" font-weight-bold">Selected Category Items/Featured Products</h2>
                   <div class="row flex-wrap">
+                  {% for prod in products %}
                       <div class="col-4 ">
                           <div class="card jumbo_cont bg-dark">
                             <div class=" card-body">
-                              <img src="{% static 'images/cup.jpg' %}" class="jumbo_cont"  width="344px" height="240px" alt="">
-                              <span class="mt-2" style="color: white;">Item Name</span>
+                              <img src="{{prod.img.url}}" class="jumbo_cont"  width="344px" height="240px" alt="">
+                              <a href="{% url 'product-details' prod.slug %}"> <span class="mt-2" style="color: white;">{{prod.name}}</span></a>
                               <div class=" mt-3 form-inline">
                                 <button type="button" class="btn btn-success"> <i class="fa fa-cart-arrow-down" aria-hidden="true"></i> Add Item</button>
                                 <button type="button" class="btn ml-3 btn-primary"> <i class="fas fa-save    "></i> WishList </button>
@@ -78,6 +79,7 @@
                             </div>
                           </div>
                       </div>
+                      {% endfor %}
                       <div class="col-4 ">
                         <div class="card jumbo_cont bg-dark">
                           <div class=" card-body">
