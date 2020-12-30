@@ -10,3 +10,6 @@ def collection(request):
 
 def productdetails(request):
    return render(request,'product-details.html')
+
+def checkout(request):
+   return render(request,'checkout.html')
