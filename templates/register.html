@@ -3,9 +3,22 @@
     
 <head>
 	<title>Rigister</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+	<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<!-- Bootstrap core CSS -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- Material Design Bootstrap -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
+<!-- JQuery -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 	<style>
 		body,
@@ -15,129 +28,73 @@
 			height: 100%;
 			background: #7abecc !important;
 		}
-		.user_card {
-			width: 350px;
-			margin-top: auto;
-			margin-bottom: auto;
-			background: #74cfbf;
-			position: relative;
-			display: flex;
-			justify-content: center;
-			flex-direction: column;
-			padding: 10px;
-			box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			-moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-			border-radius: 5px;
-
-		}
-
-		.form_container {
-			margin-top: 20px;
-		}
-
-		#form-title{
-			color: #fff;
-		}
-		.login_btn {
-			width: 100%;
-			background: #33ccff !important;
-			color: white !important;
-		}
-		.login_btn:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-		.login_container {
-			padding: 0 2rem;
-		}
-		.input-group-text {
-			background: #f7ba5b !important;
-			color: white !important;
-			border: 0 !important;
-			border-radius: 0.25rem 0 0 0.25rem !important;
-		}
-		.input_user,
-		.input_pass:focus {
-			box-shadow: none !important;
-			outline: 0px !important;
-		}
-
+	
 	</style>
 
 </head>
 <body>
-	<div class="container h-100">
-		<div class="d-flex justify-content-center h-100">
-			<div class="user_card">
-				<div class="d-flex justify-content-center">
-					<h3 id="form-title">REGISTER ACCOUNT</h3>
-				</div>
-				<div class="d-flex justify-content-center form_container">
+	<div class="container-fluid col-8 mt-5 p-3 ">
+		
+       <div class="card">
+       	<div class=" card-body ">
+       	<form method="POST" action="">
+        {% csrf_token %}
+            <div class="form-header text-center ">
+                <h3><i class="fa fa-user"></i> Register:</h3>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-user prefix"></i>
+                <input type="text" id="form3" class="form-control" name="name" required="required">
+                <label for="form3">Your name</label>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-envelope prefix"></i>
+                <input type="text" id="form2" class="form-control" name="email" required="required">
+                <label for="form2">Email</label>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-phone prefix"></i>
+                <input type="text" id="form2" class="form-control" name="number" required="required">
+                <label for="form2">Phone Number</label>
+            </div>
+            <div class="md-form ml-5">
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <span for="male">Male</span>
 
-					<form method="POST" action="">
-                    {% csrf_token %}
-
-						<div class="input-group mb-3">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-user"></i></span>
-                            </div>
-                            <input type="text" class="form-control form-control-sm ml-2" name="username">
-                            <!-- {{form.username}} -->
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
-							</div>
-							<!-- {{form.email}} -->
-                            <input type="text" class="form-control form-control-sm ml-2" name="email">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-                            <!-- {{form.password1}} -->
-                            <input type="text" class="form-control form-control-sm ml-2" name="pass">
-						</div>
-						<div class="input-group mb-2">
-							<div class="input-group-append">
-								<span class="input-group-text"><i class="fas fa-key"></i></span>
-							</div>
-							<!-- {{form.password2}} -->
-                            <input type="text" class="form-control form-control-sm ml-2" name="repass">
-                        </div>
-
-				   		<div class="d-flex justify-content-center mt-3 login_container">
-				 			<input class="btn login_btn" type="submit" value="Register Account">
-				   		</div>
-					</form>
-				</div>
-                {{form.errors}}
-				<div class="mt-4">
-					<div class="d-flex justify-content-center links">
-						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
-					</div>
-				</div>
-			</div>
-		</div>
+                </div>
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="female">
+                    <span for="male">Female</span>
+                </div>
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="others">
+                    <span for="male">Others</span>
+                </div>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input type="password" id="form4" class="form-control" name="pass" required="required">
+                <label for="form4">Your password</label>
+            </div>
+            <div class="md-form">
+                <i class="fa fa-lock prefix"></i>
+                <input type="password" id="form4" class="form-control" name="repass" required="required">
+                <label for="form4">Re password</label>
+            </div>
+            <div class="md-form text-center">
+                <button type="submit" class="btn btn-success">submit</button>
+            </div>
+       	</form>
+           <div>
+           {% for message in messages %}
+           <h3>{{message}}</h3>
+           {% endfor %}
+           </div>
+       	</div>
+       </div>
+		
 	</div>
-	<script>
-						/* Because i didnt set placeholder values in forms.py they will be set here using vanilla Javascript
-		//We start indexing at one because CSRF_token is considered and input field 
-		 */
-
-		//Query All input fields
-		var form_fields = document.getElementsByTagName('input')
-		form_fields[1].placeholder='Username..';
-		form_fields[2].placeholder='Email..';
-		form_fields[3].placeholder='Enter password...';
-		form_fields[4].placeholder='Re-enter Password...';
-
-
-		for (var field in form_fields){	
-			form_fields[field].className += ' form-control'
-		}
-	</script>
 </body>
 </html>
 

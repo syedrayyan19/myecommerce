@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
+from main.models import Customer
 # Create your views here.
 
 
@@ -21,20 +22,24 @@ def login(request):
 
 def register(request):
     if request.method == 'POST':
-        username = request.POST.get('username', False)
+        username = request.POST.get('email', False)
         email = request.POST['email']
-        
-        password1 = request.POST.get('pass')
-        repassword = request.POST.get('repass')
+        name = request.POST['name']
+        number = request.POST['number']
+        gender = request.POST['gender']
+        print(gender)
+        password1 = request.POST['pass']
+        repassword = request.POST['repass']
         if password1 == repassword:
-            if User.objects.filter(email=email).exists():
+            if User.objects.filter(username=email).exists():
                 messages.info(request, 'this email already registered')
                 return redirect('register')
             else:
 
-                user = User.objects.create_user(
-                    username=username, email=email, password=password1)
+                user = User.objects.create_user(username=email, password=password1)
                 
+                customer=Customer.objects.create(name=name,email=email,number=number,gender=gender)
+                customer.save()
                 user.save()
                 print('user created')
                 return redirect('/')

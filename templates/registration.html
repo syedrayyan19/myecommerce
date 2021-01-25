@@ -1,0 +1,32 @@
+<html>
+<body>
+<form method="POST" action="">
+{% csrf_token %}
+   <input type="text" name="name"></input>
+   <input type="text" name="email"></input>
+   <input type="number" name="number"></input>
+   <div class="md-form ml-5">
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <span for="male">Male</span>
+
+                </div>
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="female">
+                    <span for="male">Female</span>
+                </div>
+                <div class="form-check-inline ">
+                    <input type="radio" id="male" name="gender" value="others">
+                    <span for="male">Others</span>
+                </div>
+            </div>
+   <input type="password" name="pass"></input>
+   <input type="password" name="repass"></input>
+   <input type="submit">
+</form>
+<div>
+{% for message in  messages%}
+<h3>{{message}}</h3>
+{% endfor %}
+</body>
+</html>
